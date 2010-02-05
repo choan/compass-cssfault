@@ -1,0 +1,22 @@
+=underline_avoid(!selectors = "")
+  @if !selectors != ""
+    #{!selectors}
+      +underline_avoid
+  @else
+    +_underline_avoid
+
+=_underline_avoid
+  a
+    text-decoration: none
+
+=underline_on_hover(!selectors = "")
+  @if !selectors != ""
+    #{!selectors}
+      +underline_on_hover
+  @else
+    +_underline_on_hover
+
+=_underline_on_hover
+  a:hover
+    text-decoration: underline
+

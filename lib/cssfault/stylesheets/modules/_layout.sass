@@ -1,0 +1,94 @@
+!layout_width ||= 960px
+!layout_cols ||= 12
+!layout_gap_width  ||= 10px 
+!selector_main_col ||= ".main"
+!selector_bar_1 ||= ".bar-1"
+!selector_bar_2 ||= ".bar-2"
+
+
+!layout_col_width = (!layout_width - !layout_cols * 2 * !layout_gap_width) / !layout_cols
+
+=column_width(!size, !reserve = 0)
+  width = !size * !layout_col_width + (!size * 2 - 2) * !layout_gap_width - !reserve * 2
+
+=column(!size = 2, !pad = 0, !border = 0)
+  float: left
+  display: inline
+  +column_width(!size, !pad + !border)
+  margin-left = !layout_gap_width
+  margin-right = !layout_gap_width
+  @if !pad != 0
+    padding = !pad
+
+=alpha
+  margin-left: 0
+
+=omega
+  margin-right: 0
+  
+=layout(!main, !bar_1, !bar_2 = "")
+  #{!selector_main_col}
+    +column(!main)
+  #{!selector_bar_1}
+    +column(!bar_1)
+  @if !bar_2 != ""
+    #{!selector_bar_2}
+      +column(!bar_2)
+  
+
+
+=clearfix(!selectors = "")
+  @if !selectors != ""
+    #{!selectors}
+      +clearfix
+  @else
+    +_clearfix
+
+=_clearfix
+  zoom: 1
+  &:after
+    content: " "
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+  
+=setHasLayout
+  zoom: 1
+
+=layout_container
+  +clearfix
+
+=push(!size)
+  margin-left = !size * !layout_col_width + (!size * 2 + 1) * !layout_gap_width
+
+=pull(!size)
+  +push(-!size)
+
+=zero
+  margin: 0
+  padding: 0
+
+=test_nesting
+  div
+    background: #ddd
+    div
+      background: #bbb
+      div
+        background: #aaa
+        div
+          background: #999
+          div
+            background: #eee
+
+=full_width_block(!selectors = "")
+  @if !selectors != ""
+    #{!selectors}
+      +full_width_block
+  @else
+    +_full_width_block
+
+=_full_width_block
+  margin = 0 !layout_gap_width
+
+

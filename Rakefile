@@ -5,12 +5,11 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "compass-cssfault"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{A plugin for Compass tailored for myself}
+    gem.description = %Q{Easily create reusable layouts with Sass and Compass}
     gem.email = "choan.galvez@gmail.com"
     gem.homepage = "http://github.com/choan/compass-cssfault"
     gem.authors = ["Choan Galvez"]
-    gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
