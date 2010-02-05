@@ -5,10 +5,10 @@
 
 Gem::Specification.new do |s|
   s.name = %q{compass-cssfault}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Choan Galvez"]
+  s.authors = ["Choan G\303\241lvez"]
   s.date = %q{2010-02-05}
   s.description = %q{Easily create reusable layouts with Sass and Compass}
   s.email = %q{choan.galvez@gmail.com}
@@ -23,7 +23,12 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "lib/cssfault.rb"
+     "compass-cssfault.gemspec",
+     "lib/cssfault.rb",
+     "lib/cssfault/compass_plugin.rb",
+     "lib/cssfault/stylesheets/_cssfault.sass",
+     "lib/cssfault/stylesheets/modules/_behaviour.sass",
+     "lib/cssfault/stylesheets/modules/_layout.sass"
   ]
   s.homepage = %q{http://github.com/choan/compass-cssfault}
   s.rdoc_options = ["--charset=UTF-8"]

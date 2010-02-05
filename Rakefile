@@ -9,7 +9,7 @@ begin
     gem.description = %Q{Easily create reusable layouts with Sass and Compass}
     gem.email = "choan.galvez@gmail.com"
     gem.homepage = "http://github.com/choan/compass-cssfault"
-    gem.authors = ["Choan Galvez"]
+    gem.authors = ["Choan Gálvez"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
